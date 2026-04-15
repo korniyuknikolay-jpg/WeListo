@@ -25,7 +25,6 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState(null);
   const { isDarkMode } = useStore();
-
   const { t } = useTranslation();
 
   useEffect(() => {
@@ -93,10 +92,10 @@ export default function App() {
                 title: "🛒 WeListo",
                 headerLeft: () => (
                   <TouchableOpacity
-                    style={{ marginLeft: 15 }}
+                    style={styles.headerLeftBtn}
                     onPress={() => navigation.navigate("Settings")}
                   >
-                    <Text style={{ fontSize: 22 }}>⚙️</Text>
+                    <Text style={styles.headerLeftText}>⚙️</Text>
                   </TouchableOpacity>
                 ),
                 headerRight: () => (
@@ -137,6 +136,19 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  logoutBtn: { marginRight: 15, padding: 5 },
-  logoutText: { color: "#FF3B30", fontWeight: "600", fontSize: 16 },
+  headerLeftBtn: {
+    marginLeft: 15,
+  },
+  headerLeftText: {
+    fontSize: 22,
+  },
+  logoutBtn: {
+    marginRight: 15,
+    padding: 5,
+  },
+  logoutText: {
+    color: "#FF3B30",
+    fontWeight: "600",
+    fontSize: 16,
+  },
 });
